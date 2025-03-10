@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | SIIP" description="About SIIP Smart and progressive">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about SIIP and our mission."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/ai-brain.jpg"
+					alt="AI Brain technology"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">SIIP - Our Mission</h2>
+				<div class="content">
+                    <p>At SIIP, we are driven by the power of innovation, focusing on leveraging technology to boost growth and efficiency. Our core mission is to harness the capabilities of Artificial Intelligence (AI) and Business Intelligence (BI) to open up new avenues for success and optimize operations.</p>
+                    <p>We believe in the transformative potential of AI and BI to revolutionize businesses. Our goal is to empower companies to make informed, data-driven decisions, enabling them to reach new heights of success. By mastering advanced tools and strategies, we assist organizations in navigating the intricacies of today's dynamic business environment.</p>
+                    <p>SIIP is a smart and progressive company focused on helping businesses like yours to grow. We focus on assisting clients to achieve their next level of growth, and we are excited to partner with you and guide your path to success.</p>
+
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+                    <p>
+                        SIIP's team is dedicated to continuous learning, ensuring a solid foundation in the core concepts of AI and BI. Our team members are continuously expanding their knowledge through ongoing courses and certifications in advanced data analysis, machine learning, and AI ethics.
+                    </p>
+                    <p>
+                        We are deeply committed to professional development, constantly seeking out ways to equip our clients with the latest and most effective technologies.
+                    </p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+                    <p>SIIP's core competencies revolve around utilizing AI and BI to extract actionable insights and foster growth. We have a strong command of various analytical tools and are proficient in data visualization, predictive modeling, and creating customized BI dashboards. </p>
+                    <p>SIIP will help you with :</p>
+                    <ul><li>AI integration and implementation</li><li>Data analysis and business intelligence</li><li>Process optimization with innovative tools</li><li>BI Dashboard development</li></ul>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
